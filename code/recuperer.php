@@ -119,7 +119,7 @@ case "POST" : {
    }
 
    if (!$data =$stGetID->fetch()) {
-      deliver_response(500,"Erreur DB",null);
+      deliver_response(500,"Utilisateur introuvable",null);
       exit;
    }
    $idAuteur = $data['id_auteur'];
