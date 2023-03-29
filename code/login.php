@@ -7,7 +7,6 @@ include('../libs/server_utils.php');
 
 
 $linkpdo = Connexion::getPDO(DB_NAME,DB_HOST,DB_USER,DB_PASS);
-$EXP_TIME = 3600;
 
 $http_method = $_SERVER['REQUEST_METHOD'];
 if ($http_method != "POST") {
@@ -54,7 +53,7 @@ if (isValidUser($data['username'],$data ['password'])) {
     $username =  $data ['username'];
 
     $headers = array('alg'=>'HS256','typ'=>'JWT');
-    $payload = array('username'=>$username, 'exp'=>(time()+$EXP_TIME));
+    $payload = array('username'=>$username, 'exp'=>(time()+JWT_TIMEOUT));
 
     $jwt = generate_jwt($headers,$payload,JWT_SECRET);
     $reponse = ["token"=>$jwt];
