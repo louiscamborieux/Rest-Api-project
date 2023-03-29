@@ -70,7 +70,7 @@ if (!isset($_GET['id'])) {
             exit;
         }
  
-        $requetedata = "Select login as utilisateur
+        $requetedata = "Select login as utilisateur, role
         from auteur, reaction 
         where id_post = ? and reac = ?
         and auteur.id_auteur = reaction.id_auteur";

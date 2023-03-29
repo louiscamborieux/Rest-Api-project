@@ -43,7 +43,8 @@ case "GET" : {
          $requete = $requete.$precisid;
       }
       $requete = $requete."
-      GROUP BY id_post";
+      GROUP BY id_post
+      ORDER BY date_publication";
       $reponse = array("connected" => true);
    }
    else {
@@ -72,7 +73,7 @@ case "GET" : {
 
 
  
- if (!$data = $st->fetchALL(PDO::FETCH_ASSOC)) {
+ if (!($data = $st->fetchALL(PDO::FETCH_ASSOC)) && $precisid != null) {
    deliver_response(404,'ressource introuvable',$reponse);
  }
  else {
