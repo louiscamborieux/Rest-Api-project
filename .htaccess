@@ -1,5 +1,6 @@
 Options +FollowSymlinks
 RewriteEngine on
+RewriteRule ^login$  code/login.php
 RewriteRule ^post$  code/recuperer.php
 RewriteRule ^post/([0-9]+)$   code/recuperer.php?id=$1 
 RewriteRule ^post/([0-9]+)/like$  code/reacts.php?id=$1&type=like

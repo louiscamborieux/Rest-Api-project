@@ -319,6 +319,11 @@ case "PUT" : {
    $postedData = file_get_contents('php://input');
    $jsonData = json_decode($postedData,TRUE);
 
+   if ($jsonData == null ) {
+      deliver_response(400,"Ressource mal formatté",null);
+      exit; 
+   }
+
    foreach(FIELDS as $field) {
       if (!array_key_exists($field,$jsonData)) {
          deliver_response(400,"Ressource incomplète",null);
