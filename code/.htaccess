@@ -1,0 +1,9 @@
+Options +FollowSymlinks
+RewriteEngine on
+RewriteRule ^post$  recuperer.php
+RewriteRule ^post/([0-9]+)$   recuperer.php?id=$1 
+RewriteRule ^post/([0-9]+)/like$  reacts.php?id=$1&type=like
+RewriteRule ^post/([0-9]+)/dislike$  reacts.php?id=$1&type=dislike
+RewriteRule ^post/([0-9]+)/unlike$  reacts.php?id=$1&type=unreact
+RewriteRule ^post/([0-9]+)/undislike$  reacts.php?id=$1&type=unreact
+RewriteRule ^post/([0-9]+)/delete$  reacts.php?id=$1
