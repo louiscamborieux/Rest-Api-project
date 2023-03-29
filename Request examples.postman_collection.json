@@ -1,0 +1,486 @@
+{
+	"info": {
+		"_postman_id": "27710a6c-6242-4bdf-9bc8-99fa2a4c7b65",
+		"name": "Request examples",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25741981"
+	},
+	"item": [
+		{
+			"name": "non connecte",
+			"item": [
+				{
+					"name": "Recuperer posts sans connexion",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/API/Rest-Api-project/post",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"API",
+								"Rest-Api-project",
+								"post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Recuperer posts avec id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer <Jeton JWT>",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost/API/Rest-Api-project/post/44",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"API",
+								"Rest-Api-project",
+								"post",
+								"44"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "publisher",
+			"item": [
+				{
+					"name": "Connexion publisher",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\" : \"louiscmb\",\r\n    \"password\" : \"$iutinfo\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost/API/Rest-Api-project/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"API",
+								"Rest-Api-project",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Recuperer posts avec connexion",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer <Jeton JWT>",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost/API/Rest-Api-project/post",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"API",
+								"Rest-Api-project",
+								"post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ajouter un post",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer <Jeton JWT>",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n                \"auteur\": \"louiscmb\",\r\n                \"postid\": \"54\",\r\n                \"date_publication\": \"2023-03-29 15:24:39\",\r\n                \"date_modification\": null,\r\n                \"contenu\": \"Contenu du post\",\r\n                \"likes\": \"0\",\r\n                \"dislikes\": \"0\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost/API/Rest-Api-project/post",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"API",
+								"Rest-Api-project",
+								"post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modifier un post",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer <Jeton JWT>",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n                \"auteur\": \"louiscmb\",\r\n                \"postid\": \"55\",\r\n                \"date_publication\": \"2023-03-29 15:24:39\",\r\n                \"date_modification\": \"2023-03-29 15:30:30\",\r\n                \"contenu\": \"Contenu du post modifie\",\r\n                \"likes\": \"0\",\r\n                \"dislikes\": \"0\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost/API/Rest-Api-project/post/55",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"API",
+								"Rest-Api-project",
+								"post",
+								"55"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Echec Modifier un post",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer <Jeton JWT>",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n                \"auteur\": \"louiscmb\",\r\n                \"postid\": \"55\",\r\n                \"date_publication\": \"2023-03-29 15:24:39\",\r\n                \"date_modification\": \"2023-03-29 15:30:30\",\r\n                \"contenu\": \"Contenu du post modifie\",\r\n                \"likes\": \"0\",\r\n                \"dislikes\": \"0\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost/API/Rest-Api-project/post/44",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"API",
+								"Rest-Api-project",
+								"post",
+								"44"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Supprimer un post",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer <Jeton JWT>",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost/API/Rest-Api-project/post/55",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"API",
+								"Rest-Api-project",
+								"post",
+								"55"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Echec Supprimer un post",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer <Jeton JWT>",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost/API/Rest-Api-project/post/44",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"API",
+								"Rest-Api-project",
+								"post",
+								"44"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Liker un post",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer <Jeton API>",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost/API/Rest-Api-project/post/46/like",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"API",
+								"Rest-Api-project",
+								"post",
+								"46",
+								"like"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Disliker un post",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer <Jeton API>",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost/API/Rest-Api-project/post/46/like",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"API",
+								"Rest-Api-project",
+								"post",
+								"46",
+								"like"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Annuler un like/dislike",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer  <Jeton API>",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost/API/Rest-Api-project/post/46/unlike",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"API",
+								"Rest-Api-project",
+								"post",
+								"46",
+								"unlike"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "moderator",
+			"item": [
+				{
+					"name": "Connexion moderator",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\" : \"blogModerator\",\r\n    \"password\" : \"$iutinfo\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost/API/Rest-Api-project/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"API",
+								"Rest-Api-project",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Voir auteurs like",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer <Jeton API>",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost/API/Rest-Api-project/post/44/like",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"API",
+								"Rest-Api-project",
+								"post",
+								"44",
+								"like"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Voir auteurs dislike",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer <Jeton API>",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost/API/Rest-Api-project/post/44/dislike",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"API",
+								"Rest-Api-project",
+								"post",
+								"44",
+								"dislike"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Supprimer un post",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer <Jeton JWT>",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost/API/Rest-Api-project/post/55",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"API",
+								"Rest-Api-project",
+								"post",
+								"55"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
