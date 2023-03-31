@@ -66,7 +66,7 @@ if (!isset($_GET['id'])) {
         }
 
         if (!$post = $stdata->fetch()) {
-            deliver_response(404,"Errreur, post introuvable",null);
+            deliver_response(404,"Erreur, post introuvable",null);
             exit;
         }
  
