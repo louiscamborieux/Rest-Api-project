@@ -166,7 +166,7 @@ case "POST" : {
    }
 
    if (!$data = $stLastPost->fetch(PDO::FETCH_ASSOC)) {
-      echo deliver_response(500,"Ressource non envoyée",null);
+      deliver_response(500,"Ressource non envoyée",null);
       exit;
    }
    deliver_response(201,"Succes de l'ajout",$data);
@@ -218,7 +218,6 @@ case "DELETE" : {
       $stIsAuteur->execute(array($username,$_GET['id']));
    }
    catch (Exception $e){
-      echo $e->getMessage();
       exit;
    }
 
@@ -291,7 +290,7 @@ case "PUT" : {
    }
 
    if (!$post = $stCheckPost->fetch()) {
-      deliver_response(404,"Errreur, post introuvable",null);
+      deliver_response(404,"Erreur, post introuvable",null);
       exit;
    }
 
@@ -307,7 +306,6 @@ case "PUT" : {
       $stIsAuteur->execute(array($username,$_GET['id']));
    }
    catch (Exception $e){
-      echo $e->getMessage();
       exit;
    }
 
